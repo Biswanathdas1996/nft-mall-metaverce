@@ -114,8 +114,8 @@ const onClickOnMesh = (token: any, image: any) => {
 
 // -----------------------------------Albums----------------------------------------
 CreateObject([50, 10, 0.5], [1, 3, -37], './textures/img/marble.jpg') // front
-CreateObject([33, 10, 0.5], [11, 3, -22], './textures/img/marble.jpg') // back
-CreateObject([0.5, 10, 33], [35, 3, -10], './textures/img/marble.jpg') // right
+CreateObject([33, 10, 0.5], [11, 3, -12], './textures/img/marble.jpg') // back
+CreateObject([0.5, 10, 33], [35, 3, 0], './textures/img/marble.jpg') // right
 
 // CreateObject([0.5, 20, 55], [-30, 3, -10], './textures/img/marble.jpg') // left
 
@@ -183,41 +183,41 @@ PhotoFrame(
 // ----------------------------front-------------------------------------
 CreateObject(
   [6, 1, 0.5],
-  [10, 6.5, -20],
+  [10, 6.5, -10],
   './textures/img/cooltext420830515242949.png',
 )
 PhotoFrame(
   [5, 5, 0.5],
   [3.5, 3.3, 1],
-  [22, 3, -20],
+  [22, 3, -10],
   './textures/img/token18.jpg',
   18,
 )
 PhotoFrame(
   [5, 5, 0.5],
   [3.5, 3.3, 1],
-  [16, 3, -20],
+  [16, 3, -10],
   './textures/img/token19.jpg',
   19,
 )
 PhotoFrame(
   [5, 5, 0.5],
   [3.5, 3.3, 1],
-  [10, 3, -20],
+  [10, 3, -10],
   './textures/img/token20.png',
   20,
 )
 PhotoFrame(
   [5, 5, 0.5],
   [3.5, 3.3, 1],
-  [4, 3, -20],
+  [4, 3, -10],
   './textures/img/token23.png',
   21,
 )
 PhotoFrame(
   [5, 5, 0.5],
   [3.5, 3.3, 1],
-  [-2, 3, -20],
+  [-2, 3, -10],
   './textures/img/token22.png',
   22,
 )
@@ -225,32 +225,32 @@ PhotoFrame(
 PhotoFrame(
   [0.5, 5, 5],
   [1, 3.3, 3.5],
-  [34, 3, -10],
+  [34, 3, 0],
   './textures/img/token1.png',
   1,
 )
 PhotoFrame(
   [0.5, 5, 5],
   [1, 3.3, 3.5],
-  [34, 3, -16],
+  [34, 3, -6],
   './textures/img/token5.jpg',
   5,
 )
 PhotoFrame(
   [0.5, 5, 5],
   [1, 3.3, 3.5],
-  [34, 3, -22],
+  [34, 3, -12],
   './textures/img/token3.png',
   4,
 )
 CreateObject(
   [0.5, 3, 10],
-  [34, 4, 0],
+  [34, 4, 10],
   './textures/img/cooltext420829729532844.png',
 )
 CreateObject(
   [0.5, 1, 6],
-  [34, 7, -15],
+  [34, 7, -5],
   './textures/img/cooltext420830017333234.png',
 )
 

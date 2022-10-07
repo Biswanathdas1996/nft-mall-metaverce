@@ -15,7 +15,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [22, 3, -10],
     './textures/img/token18.jpg',
-    18,
+    22,
   )
   PhotoFrame(
     scene,
@@ -23,7 +23,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [16, 3, -10],
     './textures/img/token19.jpg',
-    19,
+    23,
   )
   PhotoFrame(
     scene,
@@ -31,7 +31,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [10, 3, -10],
     './textures/img/token20.png',
-    20,
+    24,
   )
   PhotoFrame(
     scene,
@@ -39,7 +39,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [4, 3, -10],
     './textures/img/token23.png',
-    21,
+    25,
   )
   PhotoFrame(
     scene,
@@ -47,6 +47,6 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [-2, 3, -10],
     './textures/img/token22.png',
-    22,
+    26,
   )
 }

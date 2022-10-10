@@ -2,7 +2,7 @@ import { CreateObject, PhotoFrame } from '../helpers'
 import { scene } from '../init'
 
 export default function sportsCollection() {
-  CreateObject(scene, [50, 10, 0.5], [1, 3, -37], './textures/img/marble.jpg') // front
+  CreateObject(scene, [80, 10, 0.5], [1, 3, -37], './textures/img/marble.jpg') // front
 
   CreateObject(
     scene,
@@ -10,68 +10,95 @@ export default function sportsCollection() {
     [-2, 6.5, -35],
     './textures/img/cooltext420831018997673.png',
   )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [-20, 3, -35],
-    './textures/img/token7.jpg',
-    14,
+
+  var requestOptions: any = {
+    method: 'GET',
+    redirect: 'follow',
+  }
+
+  fetch(
+    'https://sosal.in/endpoints/metaverce/get_nft.php?category=sports',
+    requestOptions,
   )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [-14, 3, -35],
-    './textures/img/token8.jpg',
-    15,
-  )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [-8, 3, -35],
-    './textures/img/Token9.jpg',
-    16,
-  )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [-2, 3, -35],
-    './textures/img/token14.jpg',
-    17,
-  )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [4, 3, -35],
-    './textures/img/token15.jpg',
-    18,
-  )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [10, 3, -35],
-    './textures/img/token17.png',
-    19,
-  )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [16, 3, -35],
-    './textures/img/token23.jpg',
-    20,
-  )
-  PhotoFrame(
-    scene,
-    [5, 5, 0.5],
-    [3.5, 3.3, 1],
-    [22, 3, -35],
-    './textures/img/token24.jpg',
-    21,
-  )
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result)
+      let initial = 20
+      result?.map((data: any, index: number) => {
+        PhotoFrame(
+          scene,
+          [4, 4, 0.5],
+          [3.2, 3.0, 1],
+          [(initial -= 4.5), 3, -35],
+          data?.image_link,
+          data?.token_id,
+        )
+      })
+    })
+    .catch((error) => console.log('error', error))
+
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [-20, 3, -35],
+  //   './textures/img/token7.jpg',
+  //   14,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [-14, 3, -35],
+  //   './textures/img/token8.jpg',
+  //   15,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [-8, 3, -35],
+  //   './textures/img/Token9.jpg',
+  //   16,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [-2, 3, -35],
+  //   './textures/img/token14.jpg',
+  //   17,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [4, 3, -35],
+  //   './textures/img/token15.jpg',
+  //   18,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [10, 3, -35],
+  //   './textures/img/token17.png',
+  //   19,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [16, 3, -35],
+  //   './textures/img/token23.jpg',
+  //   20,
+  // )
+  // PhotoFrame(
+  //   scene,
+  //   [5, 5, 0.5],
+  //   [3.5, 3.3, 1],
+  //   [22, 3, -35],
+  //   './textures/img/token24.jpg',
+  //   21,
+  // )
 }

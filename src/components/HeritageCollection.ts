@@ -2,7 +2,7 @@ import { CreateObject, PhotoFrame } from '../helpers'
 import { scene } from '../init'
 
 export default function heritageCollection() {
-  CreateObject(scene, [33, 10, 0.5], [11, 3, -12], './textures/img/marble.jpg')
+  CreateObject(scene, [33, 10, 0.3], [11, 3, -10], './textures/img/marble.jpg')
   CreateObject(
     scene,
     [6, 1, 0.5],
@@ -15,7 +15,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [22, 3, -10],
     './textures/img/token18.jpg',
-    22,
+    26,
   )
   PhotoFrame(
     scene,
@@ -23,7 +23,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [16, 3, -10],
     './textures/img/token19.jpg',
-    23,
+    25,
   )
   PhotoFrame(
     scene,
@@ -39,7 +39,7 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [4, 3, -10],
     './textures/img/token23.png',
-    25,
+    23,
   )
   PhotoFrame(
     scene,
@@ -47,6 +47,6 @@ export default function heritageCollection() {
     [3.5, 3.3, 1],
     [-2, 3, -10],
     './textures/img/token22.png',
-    26,
+    22,
   )
 }

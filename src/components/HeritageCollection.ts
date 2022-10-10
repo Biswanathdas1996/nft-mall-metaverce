@@ -2,7 +2,7 @@ import { CreateObject, PhotoFrame } from '../helpers'
 import { scene } from '../init'
 
 export default function heritageCollection() {
-  CreateObject(scene, [33, 10, 0.3], [11, 3, 30], './textures/img/marble.jpg')
+  CreateObject(scene, [33, 10, 0.3], [6, 3, 30], './textures/img/marble.jpg')
   CreateObject(
     scene,
     [6, 1, 0.5],
@@ -22,7 +22,7 @@ export default function heritageCollection() {
     .then((response) => response.json())
     .then((result) => {
       console.log(result)
-      let initial = 28
+      let initial = 24
       result?.map((data: any, index: number) => {
         PhotoFrame(
           scene,

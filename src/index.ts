@@ -13,6 +13,7 @@ import {
 import heritageCollection from './components/HeritageCollection'
 import digitalArt from './components/DigitalArt'
 import sportsCollection from './components/SportsCollection'
+import musicArt from './components/MusicArt'
 
 // LIGHTS
 light()
@@ -51,6 +52,7 @@ new GLTFLoader().load('models/Soldier.glb', function (gltf) {
 heritageCollection()
 digitalArt()
 sportsCollection()
+musicArt()
 
 // CONTROL KEYS
 const keysPressed = {}

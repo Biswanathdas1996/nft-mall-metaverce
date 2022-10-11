@@ -117,10 +117,10 @@ export default function digitalArt() {
     './textures/img/cooltext420830017333234.png',
   )
 
-  CreateObject(
-    scene,
-    [0.5, 3, 10],
-    [-30, 4, 10],
-    './textures/img/cooltext420829729532844.png',
-  )
+  // CreateObject(
+  //   scene,
+  //   [0.5, 3, 10],
+  //   [-30, 4, 10],
+  //   './textures/img/cooltext420829729532844.png',
+  // )
 }

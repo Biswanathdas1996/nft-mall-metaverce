@@ -26,6 +26,7 @@ export const CreateObject = (
   const materialC2 = new THREE.MeshBasicMaterial({ map: floorTexture })
   const meshC2: any = new THREE.Mesh<any>(geometryC2, materialC2)
   meshC2.position.set(position[0], position[1], position[2])
+  meshC2.side = THREE.FrontSide
   if (callBack) {
     meshC2.callback = callBack
   }

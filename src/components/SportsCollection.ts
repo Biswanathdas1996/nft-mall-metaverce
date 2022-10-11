@@ -11,6 +11,15 @@ export default function sportsCollection() {
     './textures/img/cooltext420831018997673.png',
   )
 
+  CreateObject(scene, [30, 10, 0.2], [-20, 3, -15], './textures/img/marble.jpg') // front
+
+  CreateObject(
+    scene,
+    [6, 1, 0.5],
+    [-22, 6.5, -15],
+    './textures/img/cooltext420831018997673.png',
+  )
+
   var requestOptions: any = {
     method: 'GET',
     redirect: 'follow',
@@ -23,13 +32,29 @@ export default function sportsCollection() {
     .then((response) => response.json())
     .then((result) => {
       console.log(result)
-      let initial = 20
-      result?.map((data: any, index: number) => {
+
+      let frontWall = result?.slice(0, 6)
+      let backWall = result?.slice(6, 10000)
+
+      let initialFrontWall = -4
+      frontWall?.map((data: any, index: number) => {
         PhotoFrame(
           scene,
           [4, 4, 0.5],
           [3.2, 3.0, 1],
-          [(initial -= 4.5), 3, -35],
+          [(initialFrontWall -= 4.5), 3, -15],
+          data?.image_link,
+          data?.token_id,
+        )
+      })
+
+      let initialBackWall = 35
+      backWall?.map((data: any, index: number) => {
+        PhotoFrame(
+          scene,
+          [4, 4, 0.5],
+          [3.2, 3.0, 1],
+          [(initialBackWall -= 4.5), 3, -35],
           data?.image_link,
           data?.token_id,
         )

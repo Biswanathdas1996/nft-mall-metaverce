@@ -14,6 +14,7 @@ import heritageCollection from './components/HeritageCollection'
 import digitalArt from './components/DigitalArt'
 import sportsCollection from './components/SportsCollection'
 import musicArt from './components/MusicArt'
+import { buyNft } from './Blockckain/Functions'
 
 // LIGHTS
 light()
@@ -116,3 +117,31 @@ function onDocumentMouseDown(event: any) {
     intersects[0]?.object?.callback()
   }
 }
+
+const buyNowButton: any = document.getElementById('buyNowButton')
+buyNowButton.addEventListener(
+  'click',
+  async () => {
+    buyNowButton.disabled = true
+    buyNowButton.innerHTML = 'Transction Initialized, Please wait... '
+    const token = buyNowButton.getAttribute('token')
+    const response = await buyNft(Number(token))
+    console.log('----response---->', response)
+    if (response?.error) {
+      console.log(response?.error?.message)
+      buyNowButton.disabled = false
+      buyNowButton.innerHTML = 'Buy Now'
+    } else {
+      document.getElementById('transction').style.display = 'block'
+      document.getElementById('buyNowButton').style.display = 'none'
+      document.getElementById('transctionHash').innerHTML =
+        response?.transactionHash
+      const transctionHashElement: any = document.getElementById(
+        'transctionHashRedirectLink',
+      )
+      transctionHashElement.href = `https://goerli.etherscan.io/tx/${response?.transactionHash}`
+      document.getElementById('blockNumber').innerHTML = response?.blockNumber
+    }
+  },
+  false,
+)

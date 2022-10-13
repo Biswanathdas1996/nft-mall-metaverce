@@ -1,13 +1,39 @@
 import * as THREE from 'three'
+import { buyNft, getNftData } from './Blockckain/Functions'
 
-const onClickOnMesh = (token: any, image: any) => {
+const onClickOnMesh = async (token: any, image: any) => {
+  const buyNowButton: any = document.getElementById('buyNowButton')
+  const priceElement: any = document.getElementById('priceElement')
+  const ownerElemennt: any = document.getElementById('ownerElemennt')
+  priceElement.innerHTML = `<div class="loader"></div>`
+  ownerElemennt.innerHTML = `<div class="loader"></div>`
+
+  document.getElementById('transction').style.display = 'none'
+  document.getElementById('buyNowButton').style.display = ''
+  buyNowButton.disabled = true
+  buyNowButton.innerHTML = 'Initializing...'
   const redirectButton: any = document.getElementById('redirectLink')
   redirectButton.href = `https://nftmall.netlify.app/details/${token}`
   document.getElementById('buttonModal').click()
+
   const nftImg: any = document.getElementById('nftImg')
   nftImg.src = image
   const modalHeader: any = document.getElementById('modalHeader')
   modalHeader.innerHTML = `Token #${token}`
+  buyNowButton.setAttribute('token', token)
+
+  const nftData = await getNftData(token)
+  console.log('nftData------->', nftData)
+  const { owner, account } = nftData
+  if (owner === account) {
+    buyNowButton.disabled = true
+    buyNowButton.innerHTML = 'You own this token'
+  } else {
+    buyNowButton.disabled = false
+    buyNowButton.innerHTML = 'Buy Now'
+  }
+  priceElement.innerHTML = `${nftData?.price / 1000000000000000000} ETH`
+  ownerElemennt.innerHTML = nftData?.owner
 }
 
 export const CreateObject = (

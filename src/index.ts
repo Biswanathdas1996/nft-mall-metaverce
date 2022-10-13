@@ -123,7 +123,7 @@ buyNowButton.addEventListener(
   'click',
   async () => {
     buyNowButton.disabled = true
-    buyNowButton.innerHTML = 'Transction Initialized, Please wait... '
+    buyNowButton.innerHTML = `<div style="display:flex; ">Transction Initialized, <div class="loader" style="margin-left:10px;"></div></div> `
     const token = buyNowButton.getAttribute('token')
     const response = await buyNft(Number(token))
     console.log('----response---->', response)

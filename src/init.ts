@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { VRButton } from 'three/examples/jsm/webxr/VRButton.js'
 
 // SCENE
 export const scene = new THREE.Scene()
@@ -24,6 +25,9 @@ renderer.shadowMap.enabled = true
 
 // CONTROLS
 export const orbitControls = new OrbitControls(camera, renderer.domElement)
+document.body.appendChild(VRButton.createButton(renderer))
+renderer.xr.enabled = true
+
 orbitControls.enableDamping = true
 orbitControls.minDistance = 5
 orbitControls.maxDistance = 15

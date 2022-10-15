@@ -153,7 +153,10 @@ function animate() {
     characterControls.update(mixerUpdateDelta, keysPressed)
   }
   orbitControls.update()
-  renderer.render(scene, camera)
+  renderer.setAnimationLoop(function () {
+    renderer.render(scene, camera)
+  })
+
   requestAnimationFrame(animate)
 }
 document.body.appendChild(renderer.domElement)

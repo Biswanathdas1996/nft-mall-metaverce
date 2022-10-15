@@ -2,7 +2,19 @@ import { CreateObject, PhotoFrame } from '../helpers'
 import { scene } from '../init'
 
 export default function sportsCollection() {
-  CreateObject(scene, [80, 10, 0.5], [1, 3, -37], './textures/img/marble.jpg') // front
+  CreateObject(
+    scene,
+    [70, 10, 0.5],
+    [-3, 3, -37],
+    './textures/img/360_F_280027991_HGgSVJVCSRkbC88TzqhcxKrSdYz2FyiM.jpg',
+  ) // back
+
+  CreateObject(
+    scene,
+    [70, 0.5, 10],
+    [-3, 8, -37],
+    './textures/img/photo-1584505192555-4feb7834358a.jpg',
+  ) // cilling
 
   CreateObject(
     scene,
@@ -11,7 +23,18 @@ export default function sportsCollection() {
     './textures/img/cooltext420831018997673.png',
   )
 
-  CreateObject(scene, [30, 10, 0.2], [-20, 3, -15], './textures/img/marble.jpg') // front
+  CreateObject(
+    scene,
+    [30, 10, 0.2],
+    [-20, 3, -15],
+    './textures/img/360_F_280027991_HGgSVJVCSRkbC88TzqhcxKrSdYz2FyiM.jpg',
+  ) // front
+  CreateObject(
+    scene,
+    [30, 0.5, 10],
+    [-20, 8, -15],
+    './textures/img/photo-1584505192555-4feb7834358a.jpg',
+  ) // cilling
 
   CreateObject(
     scene,
@@ -48,7 +71,7 @@ export default function sportsCollection() {
         )
       })
 
-      let initialBackWall = 35
+      let initialBackWall = 33
       backWall?.map((data: any, index: number) => {
         PhotoFrame(
           scene,

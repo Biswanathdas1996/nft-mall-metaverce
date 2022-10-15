@@ -1,9 +1,28 @@
 import { CreateObject, PhotoFrame } from '../helpers'
 import { scene } from '../init'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 export default function digitalArt() {
-  CreateObject(scene, [0.5, 10, 75], [35, 3, 0], './textures/img/marble.jpg')
-  CreateObject(scene, [0.1, 10, 37], [15, 3, 0], './textures/img/marble.jpg')
+  CreateObject(scene, [0.5, 10, 60], [35, 3, 0], './textures/img/marble.jpg')
+  CreateObject(
+    scene,
+    [10, 0.5, 60],
+    [35, 8, 0],
+    './textures/img/photo-1584505192555-4feb7834358a.jpg',
+  ) // cilling
+
+  CreateObject(
+    scene,
+    [0.1, 10, 37],
+    [15, 3, 0],
+    './textures/img/360_F_280027991_HGgSVJVCSRkbC88TzqhcxKrSdYz2FyiM.jpg',
+  )
+  CreateObject(
+    scene,
+    [10, 0.5, 37],
+    [15, 8, 0],
+    './textures/img/photo-1584505192555-4feb7834358a.jpg',
+  ) // cilling
 
   CreateObject(
     scene,
@@ -11,6 +30,30 @@ export default function digitalArt() {
     [15, 7, -5],
     './textures/img/cooltext420830017333234.png',
   )
+
+  new GLTFLoader().load('models/Piller.glb', function (gltf) {
+    const model = gltf.scene
+    model.position.set(34.5, 0, -30)
+    model.scale.set(20, 32, 20)
+    console.log('----model', model)
+    scene.add(model)
+  })
+
+  new GLTFLoader().load('models/Piller.glb', function (gltf) {
+    const model = gltf.scene
+    model.position.set(34.5, 0, 30)
+    model.scale.set(20, 32, 20)
+    console.log('----model', model)
+    scene.add(model)
+  })
+
+  new GLTFLoader().load('models/tree.glb', function (gltf) {
+    const model = gltf.scene
+    model.position.set(34.5, 0, 35)
+    model.scale.set(10, 15, 10)
+    console.log('----model', model)
+    scene.add(model)
+  })
 
   var requestOptions: any = {
     method: 'GET',
@@ -24,7 +67,7 @@ export default function digitalArt() {
     .then((response) => response.json())
     .then((result) => {
       console.log(result)
-      let backWallinitial = 39
+      let backWallinitial = 31
 
       let frontWall = result?.slice(0, 8)
       let backWall = result?.slice(8, 10000)

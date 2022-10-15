@@ -22,8 +22,74 @@ light()
 // FLOOR
 generateFloor()
 
-// MODEL WITH ANIMATIONS
 var characterControls: CharacterControls
+// -------------------------------------pillers....
+// MODEL WITH ANIMATIONS
+
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-5, 0, -15)
+  model.scale.set(20, 32, 20)
+  console.log('----model', model)
+  scene.add(model)
+})
+
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-35, 0, -15)
+  model.scale.set(20, 32, 20)
+  scene.add(model)
+})
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-30, 0, -5)
+  model.scale.set(20, 32, 20)
+  scene.add(model)
+})
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-30, 0, 40)
+  model.scale.set(20, 32, 20)
+  scene.add(model)
+})
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-10, 0, 30)
+  model.scale.set(20, 32, 20)
+  console.log('----model', model)
+  scene.add(model)
+})
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(23, 0, 30)
+  model.scale.set(20, 32, 20)
+  console.log('----model', model)
+  scene.add(model)
+})
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(15, 0, 19)
+  model.scale.set(20, 32, 20)
+  console.log('----model', model)
+  scene.add(model)
+})
+
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-39, 0, -37)
+  model.scale.set(20, 32, 20)
+  console.log('----model', model)
+  scene.add(model)
+})
+new GLTFLoader().load('models/Piller.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(15, 0, -19)
+  model.scale.set(20, 32, 20)
+  console.log('----model', model)
+  scene.add(model)
+})
+// -------------------------------------pillers....
+
 new GLTFLoader().load('models/Soldier.glb', function (gltf) {
   const model = gltf.scene
   model.traverse(function (object: any) {

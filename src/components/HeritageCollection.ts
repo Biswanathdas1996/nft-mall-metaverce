@@ -5,6 +5,12 @@ export default function heritageCollection() {
   CreateObject(scene, [33, 10, 0.3], [6, 3, 30], './textures/img/marble.jpg')
   CreateObject(
     scene,
+    [33, 0.5, 10],
+    [6, 8, 30],
+    './textures/img/photo-1584505192555-4feb7834358a.jpg',
+  ) // cilling
+  CreateObject(
+    scene,
     [6, 1, 0.5],
     [10, 6.5, 30],
     './textures/img/cooltext420830515242949.png',

@@ -55,10 +55,18 @@ export function generateFloor() {
   const placeholder = textureLoader.load(
     './textures/placeholder/placeholder.png',
   )
-  const sandBaseColor = textureLoader.load('./textures/img/marble.jpg')
-  const sandNormalMap = textureLoader.load('./textures/img/marble.jpg')
-  const sandHeightMap = textureLoader.load('./textures/img/marble.jpg')
-  const sandAmbientOcclusion = textureLoader.load('./textures/img/marble.jpg')
+  const sandBaseColor = textureLoader.load(
+    './textures/img/ae896ce99626ec6d3033c47c29ffb1f1.jpg',
+  )
+  const sandNormalMap = textureLoader.load(
+    './textures/img/ae896ce99626ec6d3033c47c29ffb1f1.jpg',
+  )
+  const sandHeightMap = textureLoader.load(
+    './textures/img/ae896ce99626ec6d3033c47c29ffb1f1.jpg',
+  )
+  const sandAmbientOcclusion = textureLoader.load(
+    './textures/img/ae896ce99626ec6d3033c47c29ffb1f1.jpg',
+  )
 
   const WIDTH = 80
   const LENGTH = 80

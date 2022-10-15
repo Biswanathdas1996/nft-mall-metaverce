@@ -47,14 +47,6 @@ export default function digitalArt() {
     scene.add(model)
   })
 
-  // new GLTFLoader().load('models/tree.glb', function (gltf) {
-  //   const model = gltf.scene
-  //   model.position.set(34.5, 0, 35)
-  //   model.scale.set(10, 15, 10)
-  //   console.log('----model', model)
-  //   scene.add(model)
-  // })
-
   var requestOptions: any = {
     method: 'GET',
     redirect: 'follow',

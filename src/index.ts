@@ -2,6 +2,7 @@ import { KeyDisplay } from './utils'
 import { CharacterControls } from './characterControls'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js'
 import {
   scene,
   camera,
@@ -214,3 +215,21 @@ buyNowButton.addEventListener(
   },
   false,
 )
+
+new GLTFLoader().load('models/TableEnv.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-20, 0, 35)
+  model.scale.set(10, 15, 10)
+  model.rotation.y = Math.PI
+  console.log('----model', model)
+  scene.add(model)
+})
+
+new GLTFLoader().load('models/CenterObject.glb', function (gltf) {
+  const model = gltf.scene
+  model.position.set(-5, 0.2, 0)
+  model.scale.set(8, 12, 8)
+  // model.rotation.y = Math.PI
+  console.log('----model', model)
+  scene.add(model)
+})

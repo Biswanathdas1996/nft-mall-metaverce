@@ -239,7 +239,7 @@ new GLTFLoader().load('models/CenterObject.glb', function (gltf) {
 new GLTFLoader().load('models/VideoScreen.glb', function (gltf) {
   const model = gltf.scene
   model.position.set(-35, 0.2, -25)
-  model.scale.set(20, 16, 8)
+  model.scale.set(20, 16, 16)
   model.rotation.y = Math.PI / 2
   console.log('----model', model)
   scene.add(model)
@@ -263,7 +263,7 @@ videoMaterial.needsUpdate = true
 //Create screen
 const screen = new THREE.PlaneGeometry(10, 10)
 const videoScreen = new THREE.Mesh(screen, videoMaterial)
-videoScreen.position.set(-34.5, 4.6, -25)
+videoScreen.position.set(-34, 4.6, -25)
 videoScreen.scale.set(1, 0.45, 0.4)
 videoScreen.rotation.y = Math.PI / 2
 scene.add(videoScreen)

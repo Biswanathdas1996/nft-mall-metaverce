@@ -53,7 +53,7 @@ export default function digitalArt() {
   }
 
   fetch(
-    'https://sosal.in/endpoints/metaverce/get_nft.php?category=art',
+    'https://endpoints.in/endpoints/metaverce/get_nft.php?category=art',
     requestOptions,
   )
     .then((response) => response.json())

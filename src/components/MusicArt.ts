@@ -28,7 +28,7 @@ export default function musicArt() {
   }
 
   fetch(
-    'https://sosal.in/endpoints/metaverce/get_nft.php?category=music',
+    'https://endpoints.in/endpoints/metaverce/get_nft.php?category=music',
     requestOptions,
   )
     .then((response) => response.json())

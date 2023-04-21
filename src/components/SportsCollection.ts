@@ -49,7 +49,7 @@ export default function sportsCollection() {
   }
 
   fetch(
-    'https://sosal.in/endpoints/metaverce/get_nft.php?category=sports',
+    'https://endpoints.in/endpoints/metaverce/get_nft.php?category=sports',
     requestOptions,
   )
     .then((response) => response.json())

@@ -14,7 +14,7 @@ export const getcurrentNetworkId = async () => {
     networkId = await web3?.eth?.accounts?._ethereumCall?.getNetworkId();
   } catch (err) {
     networkId = undefined;
-    console.error("___we3 not found___", err);
+    console.error("___web3 not found___", err);
   }
 
   return networkId;
@@ -28,6 +28,8 @@ export const getContractAddress = (networkID) => {
       return Address.goerli;
     case "4":
       return Address.rinkeby;
+    case "11155111":
+      return Address.sapolia;
     default:
     // code block
   }

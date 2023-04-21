@@ -22,7 +22,7 @@ export default function heritageCollection() {
   }
 
   fetch(
-    'https://sosal.in/endpoints/metaverce/get_nft.php?category=Heritage',
+    'https://endpoints.in/endpoints/metaverce/get_nft.php?category=Heritage',
     requestOptions,
   )
     .then((response) => response.json())

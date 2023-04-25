@@ -92,12 +92,16 @@ new GLTFLoader().load('models/Piller.glb', function (gltf) {
 })
 // -------------------------------------pillers....
 
-new GLTFLoader().load('models/Soldier.glb', function (gltf) {
+new GLTFLoader().load('models/Man_Animate.glb', function (gltf) {
   const model = gltf.scene
   model.traverse(function (object: any) {
     if (object.isMesh) object.castShadow = true
   })
+
+  console.log('=====>model', model)
   scene.add(model)
+  model.rotation.y = Math.PI
+
   const gltfAnimations: THREE.AnimationClip[] = gltf.animations
   const mixer = new THREE.AnimationMixer(model)
   const animationsMap: Map<string, THREE.AnimationAction> = new Map()

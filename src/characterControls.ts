@@ -82,7 +82,7 @@ export class CharacterControls {
       )
       // diagonal movement angle offset
       var directionOffset = this.directionOffset(keysPressed)
-      console.log('--directionOffset-->', directionOffset)
+
       // rotate model
       this.rotateQuarternion.setFromAxisAngle(
         this.rotateAngle,
@@ -104,8 +104,6 @@ export class CharacterControls {
       const moveX = this.walkDirection.x * velocity * delta
       const moveZ = this.walkDirection.z * velocity * delta
       this.model.position.x += moveX
-      //   this.model.rotation = Math.PI;
-      //   this.model.rotation.y = Math.PI
       this.model.position.z += moveZ
       this.updateCameraTarget(moveX, moveZ)
     }
@@ -125,7 +123,6 @@ export class CharacterControls {
 
   private directionOffset(keysPressed: any) {
     var directionOffset = 0 // w
-    // var directionOffset = Math.PI * 2 // w
 
     if (keysPressed[W]) {
       if (keysPressed[A]) {
